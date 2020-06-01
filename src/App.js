@@ -3,6 +3,7 @@ import './App.css';
 import Squares from './components/Squares/Squares';
 import SignUp from './components/SignUp/SignUp';
 import Max from './components/Max/Max';
+import Button from './components/Button';
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
 
       <Max
         numbers={ [2, 4, 10, 8] }
+      />
+
+      <Button
+        handleUpdate={ console.log }
       />
     </>
   );
