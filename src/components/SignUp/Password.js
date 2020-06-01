@@ -1,15 +1,18 @@
 import React from 'react';
 
-const Password = ({color, selected, handleClick}) => (
+const Password = ({label, error, input, handleChange}) => (
 
-    <div 
-        style={{
-            height: "200px",
-            width: "200px",
-            backgroundColor: selected ? "hotpink" : color
-        }}
-        onClick={ handleClick }
-    />
+    <div>
+        <label>
+            { label }
+            <input
+                type="password"
+                style={{ borderColor: error ? "red" : "green" }}
+                value={ input }
+                onChange={ handleChange }
+            />
+        </label>
+    </div>
 );
 
 export default Password;

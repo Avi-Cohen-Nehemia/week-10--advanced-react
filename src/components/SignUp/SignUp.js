@@ -1,15 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Password from "./Password";
 
-const SignUp = ({color, selected, handleClick}) => (
+class SignUp extends Component {
 
-    <div 
-        style={{
-            height: "200px",
-            width: "200px",
-            backgroundColor: selected ? "hotpink" : color
-        }}
-        onClick={ handleClick }
-    />
-);
+    constructor(props) {
+
+        super(props);
+
+        this.state = {
+            password: "",
+            confirm: ""
+        };
+
+        this.handlePassword = this.handlePassword.bind(this);
+        this.handleConfirm = this.handleConfirm.bind(this);
+    }
+
+    handlePassword(e) {
+
+        let value = e.currentTarget.value;
+
+        this.setState({ password: value });
+    }
+
+    handleConfirm(e) {
+
+        let value = e.currentTarget.value;
+
+        this.setState({ confirm: value });
+    }
+
+    render() {
+        let { password, confirm } = this.state;
+        let error = password.length < 12 || password !== confirm;
+
+        return (
+            <>
+                <Password
+                    label={ "Password" }
+                    error={ error }
+                    input={ password }
+                    handleChange={ this.handlePassword }
+                />
+                <Password
+                    label={ "Confirm Password" }
+                    error={ error }
+                    input={ confirm }
+                    handleChange={ this.handleConfirm }
+                />
+            </>
+        );
+    }
+}
 
 export default SignUp;
