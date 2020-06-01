@@ -32,7 +32,8 @@ class SignUp extends Component {
 
     render() {
         let { password, confirm } = this.state;
-        let error = password.length < 12 || password !== confirm;
+        let { minimumLength } = this.props;
+        let error = password.length < minimumLength || password !== confirm;
 
         return (
             <>
