@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Input from "./Input";
 
 class Form extends Component {
 
@@ -36,6 +37,7 @@ class Form extends Component {
         const { handleSubmit } = this.props;
 
         handleSubmit(this.state);
+
         this.setState({ 
             name: "",
             email: ""
@@ -47,23 +49,21 @@ class Form extends Component {
 
         return (
             <form className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                    className="form-control"
-                    id="name"
-                    type="text"
+
+                <Input
+                    label={ "Name" }
+                    type={ "text" }
                     value={ name }
-                    onChange={ this.handleName }
+                    handleChange={ this.handleName }
                 />
-                
-                <label htmlFor="email">Email</label>
-                <input
-                    className="form-control"
-                    id="email"
-                    type="email"
+
+                <Input
+                    label={ "Email" }
+                    type={ "email" }
                     value={ email }
-                    onChange={ this.handleEmail }
+                    handleChange={ this.handleEmail }
                 />
+
                 <button
                     type="submit"
                     onClick={ this.handleClick }
