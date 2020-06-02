@@ -31,21 +31,21 @@ class SignUp extends Component {
     }
 
     render() {
-        let { password, confirm } = this.state;
-        let { minimumLength } = this.props;
-        let error = password.length < minimumLength || password !== confirm;
+        const { password, confirm } = this.state;
+        const { minimumLength } = this.props;
+        let isValid = password.length >= minimumLength && password === confirm;
 
         return (
             <>
                 <Password
                     label={ "Password" }
-                    error={ error }
+                    valid={ isValid }
                     input={ password }
                     handleChange={ this.handlePassword }
                 />
                 <Password
                     label={ "Confirm Password" }
-                    error={ error }
+                    valid={ isValid }
                     input={ confirm }
                     handleChange={ this.handleConfirm }
                 />

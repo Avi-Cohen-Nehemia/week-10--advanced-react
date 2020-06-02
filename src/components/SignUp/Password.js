@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Password = ({label, error, input, handleChange}) => (
+const Password = ({label, valid, input, handleChange}) => (
 
     <div>
         <label>
             { label }
             <input
                 type="password"
-                style={{ borderColor: error ? "red" : "green" }}
+                style={{ borderColor: valid ? "green" : "red" }}
                 value={ input }
                 onChange={ handleChange }
             />
