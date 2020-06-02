@@ -34,7 +34,7 @@ class Form extends Component {
         e.preventDefault();
 
         const { handleSubmit } = this.props;
-        
+
         handleSubmit(this.state);
         this.setState({ 
             name: "",
@@ -46,23 +46,24 @@ class Form extends Component {
         const { name, email } = this.state;
 
         return (
-            <form>
-                <label>
-                    Name
-                    <input
-                        type="text"
-                        value={ name }
-                        onChange={ this.handleName }
-                    />
-                </label>
-                <label>
-                    Email
-                    <input
-                        type="email"
-                        value={ email }
-                        onChange={ this.handleEmail }
-                    />
-                </label>
+            <form className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                    className="form-control"
+                    id="name"
+                    type="text"
+                    value={ name }
+                    onChange={ this.handleName }
+                />
+                
+                <label htmlFor="email">Email</label>
+                <input
+                    className="form-control"
+                    id="email"
+                    type="email"
+                    value={ email }
+                    onChange={ this.handleEmail }
+                />
                 <button
                     type="submit"
                     onClick={ this.handleClick }
