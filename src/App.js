@@ -4,6 +4,7 @@ import Squares from './components/Squares/Squares';
 import SignUp from './components/SignUp/SignUp';
 import Max from './components/Max/Max';
 import Button from './components/Button';
+import Form from "./components/Form";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
 
       <Button
         handleUpdate={ console.log }
+      />
+
+      <Form
+        handleSubmit={ console.log }
       />
     </>
   );
