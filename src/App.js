@@ -9,16 +9,19 @@ import Form from "./components/Form/Form";
 import Articles from "./components/news/Articles";
 import Article from './components/news/Article';
 import CreateArticle from './components/news/CreateArticle';
+import Clicked from "./hooks/Clicked";
 
 function App() {
   return (
     <Router>
       <h2>My Blog</h2>
       <hr></hr>
+      <Clicked/>
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>
         <Route exact path="/news/:id" render={ ({match}) => (<Article id={ match.params.id }/>) }/>
+
         <Route exact path="/squares" component={ Squares }/>
 
         <Route exact path="/sign-up">
