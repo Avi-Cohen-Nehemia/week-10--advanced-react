@@ -13,6 +13,7 @@ import Clicked from "./hooks/Clicked";
 import Square from './hooks/Square';
 import ToggleText from './hooks/ToggleText';
 import Counter from './hooks/Counter';
+import StepCounter from './hooks/StepCounter';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
       />
       <Counter
         initial={ 50 }
+        max={ 100 }
+      />
+      <StepCounter
+        step={ 5 }
         max={ 100 }
       />
       <Switch>
