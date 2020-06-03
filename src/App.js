@@ -15,6 +15,7 @@ import ToggleText from './hooks/ToggleText';
 import Counter from './hooks/Counter';
 import StepCounter from './hooks/StepCounter';
 import CatchMeIfYouCan from './hooks/CatchMeIfYouCan';
+import RollCall from './hooks/RollCall';
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
       />
       <CatchMeIfYouCan
         jump={ 100 }
+      />
+      <RollCall
+        names={ ["Adam", "Avi", "Dan", "Harriet", "Hanna", "Henry", "Jack", "Nick", "Kierran", "Maddy", "Mhairi", "Richard"] }
       />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
