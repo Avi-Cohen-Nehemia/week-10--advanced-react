@@ -27,6 +27,7 @@ class Articles extends Component {
             });
         });
     }
+    
     render() {
         let { articles, loaded } = this.state;
 
