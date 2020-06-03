@@ -10,6 +10,7 @@ import Articles from "./components/news/Articles";
 import Article from './components/news/Article';
 import CreateArticle from './components/news/CreateArticle';
 import Clicked from "./hooks/Clicked";
+import Square from './hooks/Square';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
       <h2>My Blog</h2>
       <hr></hr>
       <Clicked/>
+      <Square
+        color={ "hotpink" }
+      />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>
