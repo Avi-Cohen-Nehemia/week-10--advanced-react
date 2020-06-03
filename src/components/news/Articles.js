@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "../../ajax/axios";
+import { Link } from "react-router-dom";
 
 class Articles extends Component {
 
@@ -31,15 +32,13 @@ class Articles extends Component {
 
         return !loaded ? <p>Loading...</p> : (
             <>
-                <h2>My Blog</h2>
                 <ul className="list-group">
                     { articles.map(article => (
                         <li key={ article.id } className="list-group-item d-flex justify-content-between">
-                            { article.title }
+                            <h4><Link to={ "news/" + article.id }>{ article.title }</Link></h4>
                             <div>
                                 { article.tags.map((tag, index) =>
-                                    <button key={ index }
-                                        className="btn btn-primary">
+                                    <button key={ index } className="btn btn-primary">
                                         { tag }
                                     </button>
                                 ) }
