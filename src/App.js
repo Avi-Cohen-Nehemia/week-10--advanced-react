@@ -14,6 +14,7 @@ import Square from './hooks/Square';
 import ToggleText from './hooks/ToggleText';
 import Counter from './hooks/Counter';
 import StepCounter from './hooks/StepCounter';
+import CatchMeIfYouCan from './hooks/CatchMeIfYouCan';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
       <StepCounter
         step={ 5 }
         max={ 100 }
+      />
+      <CatchMeIfYouCan
+        jump={ 100 }
       />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
