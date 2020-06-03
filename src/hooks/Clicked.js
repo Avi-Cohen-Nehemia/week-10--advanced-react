@@ -5,7 +5,9 @@ const Clicked = () => {
 
     const updateClick = () => setClick("Clicked");
 
-    return <p onClick={ updateClick }>{ click }</p>;
+    return(
+        <p onClick={ updateClick }>{ click }</p>
+    );
 }
 
 export default Clicked;

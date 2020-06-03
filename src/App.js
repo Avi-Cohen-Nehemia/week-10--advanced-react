@@ -11,6 +11,7 @@ import Article from './components/news/Article';
 import CreateArticle from './components/news/CreateArticle';
 import Clicked from "./hooks/Clicked";
 import Square from './hooks/Square';
+import ToggleText from './hooks/ToggleText';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
       <Clicked/>
       <Square
         color={ "hotpink" }
+      />
+      <ToggleText
+        initial={ "Hello" }
+        alternate={ "World" }
       />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
