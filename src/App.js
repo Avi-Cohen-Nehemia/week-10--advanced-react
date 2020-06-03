@@ -12,6 +12,7 @@ import CreateArticle from './components/news/CreateArticle';
 import Clicked from "./hooks/Clicked";
 import Square from './hooks/Square';
 import ToggleText from './hooks/ToggleText';
+import Counter from './hooks/Counter';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
       <ToggleText
         initial={ "Hello" }
         alternate={ "World" }
+      />
+      <Counter
+        initial={ 50 }
+        max={ 100 }
       />
       <Switch>
         <Route exact path="/news" component={ Articles }/>

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const Clicked = () => {
-    const [click, setClick] = useState("Not clicked");
+    const [text, setText] = useState("Not clicked");
 
-    const updateClick = () => setClick("Clicked");
+    const updateText = () => setText("Clicked");
 
     return(
-        <p onClick={ updateClick }>{ click }</p>
+        <p onClick={ updateText }>{ text }</p>
     );
 }
 
