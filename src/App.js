@@ -16,6 +16,7 @@ import Counter from './hooks/Counter';
 import StepCounter from './hooks/StepCounter';
 import CatchMeIfYouCan from './hooks/CatchMeIfYouCan';
 import RollCall from './hooks/RollCall';
+import PasswordStrength from './hooks/PasswordStrength';
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function App() {
       <RollCall
         names={ ["Adam", "Avi", "Dan", "Harriet", "Hanna", "Henry", "Jack", "Nick", "Kierran", "Maddy", "Mhairi", "Richard"] }
       />
+
+      <PasswordStrength />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>
