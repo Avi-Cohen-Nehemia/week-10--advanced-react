@@ -19,6 +19,7 @@ import RollCall from './hooks/RollCall';
 import PasswordStrength from './hooks/PasswordStrength';
 import TempConverter from './hooks/TempConverter';
 import List from './hooks/List';
+import ClickedReducer from './hooks/ClickedReducer';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
       <PasswordStrength />
       <TempConverter />
       <List />
+      <ClickedReducer />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>
