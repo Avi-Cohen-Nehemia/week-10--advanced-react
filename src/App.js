@@ -18,6 +18,7 @@ import CatchMeIfYouCan from './hooks/CatchMeIfYouCan';
 import RollCall from './hooks/RollCall';
 import PasswordStrength from './hooks/PasswordStrength';
 import TempConverter from './hooks/TempConverter';
+import List from './hooks/List';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
       />
       <PasswordStrength />
       <TempConverter />
+      <List />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>

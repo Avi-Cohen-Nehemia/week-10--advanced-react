@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Counter = ({ initial, max }) => {
+    
     const [counter, setCounter] = useState(initial);
 
     const addCounter = () => setCounter(counter < max ? counter + 1 : max);
