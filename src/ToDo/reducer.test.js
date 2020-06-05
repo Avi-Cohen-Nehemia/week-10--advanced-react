@@ -42,7 +42,8 @@ it('removes items', () => {
         ]
     };
 
-    //first test
+    // 1st test: if we start with an array of items and remove the item with an index of 0,
+    // then the first item in the returned array should be the "Mum" task
     // remove item at index 0
     let removed = removeItem(many, { index: 0 });
 
@@ -50,13 +51,20 @@ it('removes items', () => {
     expect(removed.items[0]).toEqual({ task: "Mum", completed: false });
 
 
-    //second test
+    // 2nd test: Make sure we're not getting the original array back.
     // check that it's not the same object being returned
     expect(removed.items).not.toBe(many.items);
 
-    //third test
+    // 3rd test: Make sure we're getting five items back
     // should be 5 items, not 6
     expect(removed.items.length).toBe(5);
+
+    // 4th test: Remove another item and make sure it still works:
+    // use the previously pruned array
+    removed = removeItem(removed, { index: 2 });
+
+    // check that the right task is now in index 2
+    expect(removed.items[2]).toEqual({ task: "You", completed: false });
 });
 
 it('updates items', () => {
