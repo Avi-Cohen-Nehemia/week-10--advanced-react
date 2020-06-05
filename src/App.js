@@ -20,6 +20,7 @@ import PasswordStrength from './hooks/PasswordStrength';
 import TempConverter from './hooks/TempConverter';
 import List from './hooks/List';
 import ClickedReducer from './hooks/ClickedReducer';
+import StepCounterReducer from './hooks/StepCounterReducer';
 
 function App() {
   return (
@@ -52,6 +53,10 @@ function App() {
       <TempConverter />
       <List />
       <ClickedReducer />
+      <StepCounterReducer
+        step={ 5 }
+        max={ 100 }
+      />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>
