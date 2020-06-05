@@ -10,3 +10,13 @@ export const addItem = (state, { value }) => {
         }]
     };
 };
+
+export const removeItem = (state, { index }) => {
+
+    return {
+        ...state,
+        items: state.items.filter((_, i) => {
+            return index !== i;
+        })
+    };
+};
