@@ -21,6 +21,7 @@ import TempConverter from './hooks/TempConverter';
 import List from './hooks/List';
 import ClickedReducer from './hooks/ClickedReducer';
 import StepCounterReducer from './hooks/StepCounterReducer';
+import TempConverterReducer from './hooks/TempConverterReducer';
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
         step={ 5 }
         max={ 100 }
       />
+      <TempConverterReducer />
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>
