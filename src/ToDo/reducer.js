@@ -20,3 +20,18 @@ export const removeItem = (state, { index }) => {
         })
     };
 };
+
+export const updateItem = (state, { index, value }) => {
+
+    return {
+        ...state,
+        items: state.items.map((item, i) => {
+            if (index === i) {
+                return {
+                    ...item,
+                    task: value
+                }
+            }
+        })
+    };
+};

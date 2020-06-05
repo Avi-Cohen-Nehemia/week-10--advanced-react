@@ -68,7 +68,20 @@ it('removes items', () => {
 });
 
 it('updates items', () => {
-    // Updating tests here
+
+    let many = {
+        items: [
+            { task: "Hello", completed: true },
+            { task: "Mum", completed: false },
+        ]
+    };
+    
+    // 1st test: If we update an item its task property should change.
+    // update an item passing the index and value
+    let updated = updateItem(many, { index: 1, value: "Dad" });
+    
+    // should have updated the task property
+    expect(updated.items[1]).toEqual({ task: "Dad", completed: false });
 });
 
 it('completes items', () => {
