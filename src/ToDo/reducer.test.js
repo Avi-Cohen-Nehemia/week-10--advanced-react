@@ -42,11 +42,17 @@ it('removes items', () => {
         ]
     };
 
+    //first test
     // remove item at index 0
     let removed = removeItem(many, { index: 0 });
 
     // "Hello" should be gone, so should get back "Mum" task
     expect(removed.items[0]).toEqual({ task: "Mum", completed: false });
+
+
+    //second test
+    // check that it's not the same object being returned
+    expect(removed.items).not.toBe(many.items);
 });
 
 it('updates items', () => {
