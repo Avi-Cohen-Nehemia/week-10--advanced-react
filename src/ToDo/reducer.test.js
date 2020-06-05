@@ -53,6 +53,10 @@ it('removes items', () => {
     //second test
     // check that it's not the same object being returned
     expect(removed.items).not.toBe(many.items);
+
+    //third test
+    // should be 5 items, not 6
+    expect(removed.items.length).toBe(5);
 });
 
 it('updates items', () => {
