@@ -12,19 +12,18 @@ const initialState = {
 it('adds items', () => {
     let result = addItem(initialState, { value: "Hello" });
 
-    // first item in the items array should be a new task with "Hello"
+    // 1st test: first item in the items array should be a new task with "Hello"
     expect(result.items[0]).toEqual({ task: "Hello", completed: false });
 
-    // shouldn't be the same array we started with
+    // 2nd test: shouldn't be the same array we started with
     expect(result.items).not.toBe(initialState.items);
 
-    // passing in the previous result, which already had one item
+    // 3rd test: passing in the previous result, which already had one item
     result = addItem(result, { value: "Mum" });
-
     // should be two items
     expect(result.items.length).toBe(2);
 
-    // check both items are now in items, in order given
+    // 4th test: check both items are now in items, in order given
     expect(result.items[0]).toEqual({ task: "Hello", completed: false });
     expect(result.items[1]).toEqual({ task: "Mum", completed: false });
 });
@@ -91,7 +90,18 @@ it('updates items', () => {
 });
 
 it('completes items', () => {
-    // Completing tests here
+    let many = {
+        items: [
+            { task: "Hello", completed: true },
+            { task: "Mum", completed: false },
+        ]
+    };
+    
+    // complete the item at index 1
+    let completed = completeItem(many, { index: 1 });
+    
+    // expected completed to be true
+    expect(completed.items[1]).toEqual({ task: "Mum", completed: true });
 });
 
 it('reduces', () => {

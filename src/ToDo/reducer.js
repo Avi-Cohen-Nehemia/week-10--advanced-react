@@ -29,9 +29,27 @@ export const updateItem = (state, { index, value }) => {
             if (index === i) {
                 return {
                     ...item,
-                    task: value
+                    task: value,
+                    completed: item.completed
                 }
             }
         })
     };
 };
+
+export const completeItem = (state, { index }) => {
+
+    return {
+        ...state,
+        items: state.items.map((item, i) => {
+            if (index === i) {
+                return {
+                    ...item,
+                    task: item.task,
+                    completed: true
+                }
+            }
+        })
+    };
+};
+
