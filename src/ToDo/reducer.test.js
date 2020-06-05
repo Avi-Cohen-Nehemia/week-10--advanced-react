@@ -97,11 +97,18 @@ it('completes items', () => {
         ]
     };
     
-    // complete the item at index 1
+    // 1st test: complete the item at index 1
     let completed = completeItem(many, { index: 1 });
-    
     // expected completed to be true
     expect(completed.items[1]).toEqual({ task: "Mum", completed: true });
+
+    // 2nd test: check that it's not the same object being returned
+    expect(completed.items[1]).not.toBe(many.items[1]);
+
+    // 3rd test: complete item at index 0
+    completed = completeItem(many, { index: 0 });
+    // should still be marked as completed
+    expect(completed.items[0]).toEqual({ task: "Hello", completed: true });
 });
 
 it('reduces', () => {
