@@ -55,9 +55,11 @@ it('removes items', () => {
     // check that it's not the same object being returned
     expect(removed.items).not.toBe(many.items);
 
+
     // 3rd test: Make sure we're getting five items back
     // should be 5 items, not 6
     expect(removed.items.length).toBe(5);
+
 
     // 4th test: Remove another item and make sure it still works:
     // use the previously pruned array
@@ -82,6 +84,10 @@ it('updates items', () => {
     
     // should have updated the task property
     expect(updated.items[1]).toEqual({ task: "Dad", completed: false });
+
+    
+    // 2nd test: check that it's not the same object being returned
+    expect(updated.items[1]).not.toBe(many.items[1]);
 });
 
 it('completes items', () => {
