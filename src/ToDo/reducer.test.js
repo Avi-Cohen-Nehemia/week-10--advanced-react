@@ -117,10 +117,12 @@ it('reduces', () => {
     // get back initial state
     expect(newState).toBe(initialState);
 
+
     // 2nd test: use the NEW_ITEM action, passing a value
     newState = reducer(initialState, { type: "NEW_ITEM", value: "Hello" });
     // make sure it's been added
     expect(newState.items[0]).toEqual({ task: "Hello", completed: false });
+
 
     // 3rd test: add some more items
     newState = reducer(newState, { type: "NEW_ITEM", value: "Mum" });
@@ -134,8 +136,15 @@ it('reduces', () => {
     // check index 3 has moved down to index 2
     expect(newState.items[2]).toEqual({ task: "Are", completed: false });
 
+    
     // 4th test: update item at index 1
     newState = reducer(newState, { type: "CHANGE_ITEM", index: 1, value: "Dad" });
     // check it's been changed
     expect(newState.items[1]).toEqual({ task: "Dad", completed: false });
+
+    
+    // 5th test: mark index 1 as completed
+    newState = reducer(newState, { type: "MARK_COMPLETED", index: 1 });
+    // check it's been updated
+    expect(newState.items[1]).toEqual({ task: "Dad", completed: true });
 });
