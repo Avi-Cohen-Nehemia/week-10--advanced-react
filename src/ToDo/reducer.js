@@ -1,5 +1,3 @@
-import React, { useReducer } from "react";
-
 export const addItem = (state, { value }) => {
 
     return {
@@ -31,6 +29,8 @@ export const updateItem = (state, { index, value }) => {
                     ...item,
                     task: value,
                 }
+            } else {
+                return item;
             }
         })
     };
@@ -46,6 +46,8 @@ export const completeItem = (state, { index }) => {
                     ...item,
                     completed: true
                 }
+            } else {
+                return item;
             }
         })
     };
