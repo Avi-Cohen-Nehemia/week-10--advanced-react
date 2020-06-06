@@ -112,5 +112,8 @@ it('completes items', () => {
 });
 
 it('reduces', () => {
-    // Reducer tests here
+    // 1st test: pass in a nonsense action
+    let newState = reducer(initialState, { type: "GOTTA_CATCH_EM_ALL" });
+    // get back initial state
+    expect(newState).toBe(initialState);
 });

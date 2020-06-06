@@ -30,7 +30,6 @@ export const updateItem = (state, { index, value }) => {
                 return {
                     ...item,
                     task: value,
-                    completed: item.completed
                 }
             }
         })
@@ -45,7 +44,6 @@ export const completeItem = (state, { index }) => {
             if (index === i) {
                 return {
                     ...item,
-                    task: item.task,
                     completed: true
                 }
             }
@@ -53,3 +51,13 @@ export const completeItem = (state, { index }) => {
     };
 };
 
+export default (state, action) => {
+    switch (action.type) {
+        case "NEW_ITEM": return addItem();
+        case "REMOVE_ITEM": return removeItem();
+        case "CHANGE_ITEM": return updateItem();
+        case "MARK_COMPLETED": return completeItem();
+
+        default: return state;
+    }
+};
