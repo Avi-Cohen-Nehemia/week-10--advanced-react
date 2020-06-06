@@ -116,4 +116,9 @@ it('reduces', () => {
     let newState = reducer(initialState, { type: "GOTTA_CATCH_EM_ALL" });
     // get back initial state
     expect(newState).toBe(initialState);
+
+    // 2nd test: use the NEW_ITEM action, passing a value
+    newState = reducer(initialState, { type: "NEW_ITEM", value: "Hello" });
+    // make sure it's been added
+    expect(newState.items[0]).toEqual({ task: "Hello", completed: false });
 });
