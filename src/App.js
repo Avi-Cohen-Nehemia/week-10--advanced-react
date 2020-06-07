@@ -26,6 +26,8 @@ import List from './ToDo/List';
 function App() {
   return (
     <Router>
+      <List />
+
       <Switch>
         <Route exact path="/news" component={ Articles }/>
         <Route exact path="/news/create" component={ CreateArticle }/>
@@ -37,7 +39,6 @@ function App() {
         <Route exact path="/password-strength" component={ PasswordStrength }/>
         <Route exact path="/temp-converter" component={ TempConverter }/>
         <Route exact path="/temp-converter-reducer" component={ TempConverterReducer }/>
-        <Route exact path="/list" component={ List }/>
 
         <Route exact path="/square">
           <Square

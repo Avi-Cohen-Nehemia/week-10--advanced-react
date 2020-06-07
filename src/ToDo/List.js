@@ -29,6 +29,11 @@ const List = () => {
         setInput("");
     };
 
+    const handleEdit = (e) => {
+      e.preventDefault();
+      dispatch({ type: "CHANGE_ITEM", value: input });
+    };
+
 return (
     <div className="card">
         <form
@@ -63,7 +68,7 @@ return (
                 >{ item.task }</span>
 
                 { /* edit button */ }
-                <button class="btn btn-sm btn-primary mr-1">Edit</button>
+                <button class="btn btn-sm btn-primary mr-1" onClick={ handleEdit }>Edit</button>
 
                 { /* remove button */ }
                 <button

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "../../ajax/axios";
 import Comments from "./Comments";
+import CreateComment from "./CreateComment";
 
 class Article extends Component {
 
@@ -35,6 +36,7 @@ class Article extends Component {
                 <h3>{ article.title }</h3>
                 <p>{ article.content }</p>
                 <Comments articleID={ id }/>
+                <CreateComment articleID={ id }/>
             </div>
         );
     }
